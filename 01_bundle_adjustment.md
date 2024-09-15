@@ -8,14 +8,16 @@
 
 ### 地图点和key frame的观测关系
 
-对于某个地图点pMp，可以通过调用`GetObservations()`方法，获取其在keyframe中的索引，可能这个点被多个key frames观测到，
-因此，这里得到的是一个`map<KeyFrame*,tuple<int,int>>`。
+对于某个地图点pMp，可以通过调用`GetObservations()`方法，获取其在keyframe中的索引，
+可能这个点被多个key frames观测到，因此，这里得到的是一个`map<KeyFrame*,tuple<int,int>>`。
+![image](https://github.com/user-attachments/assets/2abda798-a9d9-4e3f-a053-2ee045b9ad93)
 
 如果是单目相机，tuple中第一个int有效，第二个int是一个负值。
 ```cpp
 const map<KeyFrame*,tuple<int,int>> observations = pMP->GetObservations();
 ```
 我们看到，tuple中第二个camera得到的是一个负数。
+
 
 ```cpp
 
